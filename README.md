@@ -1,78 +1,98 @@
-# ⚙️ HyprSettings
+# HyprSettings
 
 <div align="center">
 
-[![Wayland](https://img.shields.io/badge/Wayland-Compositor-00599C?style=for-the-badge&logo=wayland&logoColor=white)](https://wayland.freedesktop.org/)
-[![Quickshell](https://img.shields.io/badge/Quickshell-QtQuick_6-41CD52?style=for-the-badge&logo=qt&logoColor=white)](https://quickshell.outfoxxed.me/)
+[![Hyprland](https://img.shields.io/badge/Compositor-Hyprland-00599C?style=for-the-badge&logo=hyprland&logoColor=white)](https://hyprland.org/)
+[![Quickshell](https://img.shields.io/badge/Engine-Quickshell-41CD52?style=for-the-badge&logo=qt&logoColor=white)](https://quickshell.outfoxxed.me/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge)](LICENSE)
-[![Platform](https://img.shields.io/badge/Platform-Arch_|_Fedora_|_NixOS_|_Debian-blueviolet?style=for-the-badge&logo=linux&logoColor=white)](https://github.com)
+[![Platform](https://img.shields.io/badge/Platform-Arch_Linux-blueviolet?style=for-the-badge&logo=archlinux&logoColor=white)](https://archlinux.org)
 
-**A modern, declarative GUI control center and settings manager for Wayland compositors.**  
-*Native support for Hyprland, Sway, Niri, River, and Wayfire.*
+**Declarative GUI settings center and live display manager for modular Lua-configured Hyprland setups.**
 
-[Features](#-features) • [Screenshots](#-screenshots) • [Installation](#-installation) • [Keybinds](#-compositor-integration) • [Configuration](#-configuration)
+[Preview](#preview) &bull; [Features](#features) &bull; [Config Structure](#config-structure) &bull; [Installation](#installation) &bull; [Keybindings](#keybinding-integration)
 
 </div>
 
----
+<div style="margin: 16px 0; border-top: 1px solid rgba(255,255,255,0.15);"></div>
 
-## 📸 Screenshots
+## Preview
 
-### Pitch Black & Pure White Themes
-<div align="center">
-  <img src="assets/preview-dark-general.png" width="48%" alt="Pitch Black Theme" />
-  <img src="assets/preview-white-general.png" width="48%" alt="Pure White Theme" />
-</div>
+<table width="100%">
+  <thead>
+    <tr>
+      <th width="50%" align="center">Pitch Black</th>
+      <th width="50%" align="center">Pure White</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><img src="assets/preview-dark-general.png" width="100%" alt="General Overview - Dark" /></td>
+      <td><img src="assets/preview-white-general.png" width="100%" alt="General Overview - White" /></td>
+    </tr>
+    <tr>
+      <td><img src="assets/preview-dark-monitors.png" width="100%" alt="Display Arrangement - Dark" /></td>
+      <td><img src="assets/preview-white-monitors.png" width="100%" alt="Display Arrangement - White" /></td>
+    </tr>
+    <tr>
+      <td><img src="assets/preview-dark-keybinds.png" width="100%" alt="Keybindings Inspector - Dark" /></td>
+      <td><img src="assets/preview-white-keybinds.png" width="100%" alt="Keybindings Inspector - White" /></td>
+    </tr>
+    <tr>
+      <td><img src="assets/preview-dark-startups.png" width="100%" alt="Startup Applications - Dark" /></td>
+      <td><img src="assets/preview-white-startups.png" width="100%" alt="Startup Applications - White" /></td>
+    </tr>
+  </tbody>
+</table>
 
-### Interactive Display & Monitor Arrangement
-<div align="center">
-  <img src="assets/preview-dark-monitors.png" width="80%" alt="Monitors Manager" />
-</div>
+<div style="margin: 16px 0; border-top: 1px solid rgba(255,255,255,0.15);"></div>
 
-### Keybindings & Autostart Management
-<div align="center">
-  <img src="assets/preview-dark-keybinds.png" width="48%" alt="Keybindings Inspector" />
-  <img src="assets/preview-dark-startups.png" width="48%" alt="Autostart Applications" />
-</div>
+## Features
 
----
+- **Live System Diagnostics**: Hardware overview with dynamic host, distro, kernel, CPU, GPU detection, and scalable avatar silhouette.
+- **Interactive Display Canvas**: Drag-and-drop monitor layout manager with magnetic edge snapping, real-time coordinate updates (`+X, +Y`), resolution, refresh rate, and scaling control.
+- **Keybindings Management**: Live inspector and editor for Hyprland key combinations with modifier normalization (``, `SUPER`, `CTRL`, `ALT`, `SHIFT`) and dispatcher mapping.
+- **Autostart Process Control**: Declarative interface for managing daemons, background services, status bars, and startup scripts.
+- **Dual Monochrome Aesthetics**: Pitch Black (`#0e0e0e`) OLED-optimized dark theme and Pure White (`#f5f5f7`) neutral light theme.
+- **Zero-Latency Shell Pipeline**: Built with Quickshell and QtQuick 6 for native hardware-accelerated rendering and direct compositor IPC.
 
-## ✨ Features
+<div style="margin: 16px 0; border-top: 1px solid rgba(255,255,255,0.15);"></div>
 
-- 🖥️ **Live System Diagnostics & Overview**: Dynamic hardware detection (Host, Distro, Kernel, CPU, GPU, Session DE) with dynamic vector silhouette styling.
-- 📐 **Interactive Sticky Display Manager**:
-  - Live drag-and-drop monitor canvas with magnetic edge snapping.
-  - Real-time coordinate inspection (`+X, +Y`), resolution, refresh rate, and scale factors.
-  - High-contrast visual specs border cards.
-- ⌨️ **Keybind Inspector & Configurator**:
-  - Declarative keybinding viewer and editor.
-  - Automatic modifier normalization (`$mainMod`, `SUPER`, `CTRL`, `ALT`, `SHIFT`).
-  - Native dispatcher mapping for exec, workspace navigation, window cycling, and floating.
-- 🚀 **Autostart Application Control**:
-  - Manage startup daemons, status bars, notification daemons, and wallpaper engines.
-  - Instant toggle and exec parameter tweaking.
-- 🎨 **Minimalist Dual Aesthetic Engine**:
-  - **Pitch Black (`#0e0e0e`)**: Deep OLED-optimized true dark mode with subtle gray border hierarchy.
-  - **Pure White (`#f5f5f7`)**: Clean, crisp high-contrast light mode with soft neutral accents.
-- ⚡ **Zero-Latency Declarative Performance**: Powered by Quickshell and QtQuick 6 — renders natively with hardware-accelerated compositor frame rates.
+## Config Structure
 
----
+HyprSettings connects directly to modular Lua configuration files under `~/.config/hypr/config/`. When changes are made in the GUI, they are parsed and written directly into these files in real time.
 
-## 📦 Dependencies
+```
+~/.config/hypr/
+├── config/
+│   ├── keybindings.lua   # Hotkeys, modifier definitions & dispatchers
+│   ├── autostart.lua     # Startup applications & background daemons
+│   ├── settings.lua      # Core compositor options, kb_layout & kb_options
+│   ├── monitors.lua      # Display positions, resolutions, refresh rates & scales
+│   └── env.lua           # Environment variables & wallpaper directory paths
+└── hyprland.lua          # Main entrypoint sourcing modular configs
+```
 
-Ensure the following packages are installed on your system:
+### Supported Directives
+- **Keybinds**: `hl.bind("MODS", "KEY", dsp)` syntax in `keybindings.lua`
+- **Monitors**: `hl.monitor({ output = "...", mode = "...", position = "...", scale = ... })` in `monitors.lua`
+- **Autostart**: `hl.exec("...")` commands in `autostart.lua`
+- **Variables**: `hl.env("KEY", "VALUE")` definitions in `env.lua`
 
-| Dependency | Package (Arch Linux) | Description |
+<div style="margin: 16px 0; border-top: 1px solid rgba(255,255,255,0.15);"></div>
+
+## Dependencies
+
+| Dependency | Package (Arch Linux) | Purpose |
 | :--- | :--- | :--- |
-| **Quickshell** | `quickshell-git` (AUR) | High-performance Wayland desktop shell engine |
-| **Python 3** | `python` | Config synchronization store bridge |
-| **Hyprland / Compositor** | `hyprland` / `sway` / `niri` | Supported Wayland compositor |
-| **Fonts** | `ttf-jetbrains-mono-nerd` | Vector glyphs and typography |
-| **Tools** | `jq`, `util-linux` | Command-line utilities for system queries |
+| **Quickshell** | `quickshell-git` | Desktop shell runtime engine |
+| **Hyprland** | `hyprland` | Dynamic tiling Wayland compositor |
+| **Python 3** | `python` | Config parser & serialization store |
+| **Fonts** | `ttf-jetbrains-mono-nerd` | UI typography & glyph icons |
+| **Utilities** | `jq`, `util-linux` | Command-line queries and IPC |
 
----
+<div style="margin: 16px 0; border-top: 1px solid rgba(255,255,255,0.15);"></div>
 
-## 🚀 Installation & Usage
+## Installation
 
 ### 1. Clone the Repository
 
@@ -80,71 +100,31 @@ Ensure the following packages are installed on your system:
 git clone https://github.com/TheActualWorld/hyprsettings.git ~/.config/quickshell/hyprsettings
 ```
 
-### 2. Launch Standalone
-
-Test-run the settings interface immediately with Quickshell:
+### 2. Standalone Launch
 
 ```bash
 quickshell -p ~/.config/quickshell/hyprsettings
 ```
 
----
+<div style="margin: 16px 0; border-top: 1px solid rgba(255,255,255,0.15);"></div>
 
-## ⌨️ Compositor Integration
+## Keybinding Integration
 
-Bind the settings interface to your preferred hotkey (e.g. `Super + H`):
+Add the shortcut to your Hyprland configuration (e.g. `keybindings.lua` or `keybindings.conf`):
 
-### Hyprland (`hyprland.conf` or `hyprland.lua`)
+```lua
+-- Open HyprSettings with Super + H
+hl.bind("", "H", hl.dsp.exec_cmd("quickshell -p ~/.config/quickshell/hyprsettings"))
+```
+
+Or in traditional `.conf` syntax:
 
 ```ini
-# Open HyprSettings GUI
-bind = $mainMod, H, exec, quickshell -p ~/.config/quickshell/hyprsettings
+bind = , H, exec, quickshell -p ~/.config/quickshell/hyprsettings
 ```
 
-### Sway (`~/.config/sway/config`)
+<div style="margin: 16px 0; border-top: 1px solid rgba(255,255,255,0.15);"></div>
 
-```ini
-bindsym $mod+h exec quickshell -p ~/.config/quickshell/hyprsettings
-```
+## License
 
-### Niri (`~/.config/niri/config.kdl`)
-
-```kdl
-binds {
-    Mod+H { spawn "quickshell" "-p" "~/.config/quickshell/hyprsettings"; }
-}
-```
-
----
-
-## ⚙️ Configuration & Architecture
-
-```
-hyprsettings/
-├── shell.qml               # Main window container & header navigation
-├── Theme.qml               # Centralized Pitch Black & Pure White color tokens
-├── qmldir                  # QtQuick module registration
-├── components/             # Reusable UI primitives (Cards, Switches, Buttons)
-├── pages/
-│   ├── GeneralPage.qml     # Hardware specs, theme selector & profile
-│   ├── MonitorsPage.qml    # Interactive canvas with sticky snapping & live coordinates
-│   ├── KeybindsPage.qml    # Hotkey list & dispatcher inspector
-│   └── StartupsPage.qml    # Autostart process management
-├── services/
-│   ├── SysInfo.qml         # Live hardware & session detection
-│   ├── Monitors.qml        # Real-time display queries
-│   └── SettingsStore.qml   # Reactive store connector
-└── lua_config_store.py     # Python bridge for reading and serializing configurations
-```
-
----
-
-## 📄 License
-
-Distributed under the **MIT License**. See [`LICENSE`](LICENSE) for details.
-
----
-
-<div align="center">
-  <sub>Built for the Wayland Linux desktop community.</sub>
-</div>
+Distributed under the MIT License. See [LICENSE](LICENSE) for details.
