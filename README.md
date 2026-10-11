@@ -1,4 +1,4 @@
-# ⚙️ Wayland Settings
+# ⚙️ HyprSettings
 
 <div align="center">
 
@@ -77,7 +77,7 @@ Ensure the following packages are installed on your system:
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/TheActualWorld/wayland-settings.git ~/.config/quickshell/wayland-settings
+git clone https://github.com/TheActualWorld/hyprsettings.git ~/.config/quickshell/hyprsettings
 ```
 
 ### 2. Launch Standalone
@@ -85,7 +85,7 @@ git clone https://github.com/TheActualWorld/wayland-settings.git ~/.config/quick
 Test-run the settings interface immediately with Quickshell:
 
 ```bash
-quickshell -p ~/.config/quickshell/wayland-settings
+quickshell -p ~/.config/quickshell/hyprsettings
 ```
 
 ---
@@ -97,21 +97,21 @@ Bind the settings interface to your preferred hotkey (e.g. `Super + H`):
 ### Hyprland (`hyprland.conf` or `hyprland.lua`)
 
 ```ini
-# Open Wayland Settings GUI
-bind = $mainMod, H, exec, quickshell -p ~/.config/quickshell/wayland-settings
+# Open HyprSettings GUI
+bind = $mainMod, H, exec, quickshell -p ~/.config/quickshell/hyprsettings
 ```
 
 ### Sway (`~/.config/sway/config`)
 
 ```ini
-bindsym $mod+h exec quickshell -p ~/.config/quickshell/wayland-settings
+bindsym $mod+h exec quickshell -p ~/.config/quickshell/hyprsettings
 ```
 
 ### Niri (`~/.config/niri/config.kdl`)
 
 ```kdl
 binds {
-    Mod+H { spawn "quickshell" "-p" "~/.config/quickshell/wayland-settings"; }
+    Mod+H { spawn "quickshell" "-p" "~/.config/quickshell/hyprsettings"; }
 }
 ```
 
@@ -120,7 +120,7 @@ binds {
 ## ⚙️ Configuration & Architecture
 
 ```
-wayland-settings/
+hyprsettings/
 ├── shell.qml               # Main window container & header navigation
 ├── Theme.qml               # Centralized Pitch Black & Pure White color tokens
 ├── qmldir                  # QtQuick module registration
