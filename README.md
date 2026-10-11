@@ -20,19 +20,19 @@
 
 ### Pitch Black & Pure White Themes
 <div align="center">
-  <img src="assets/preview_black.png" width="48%" alt="Pitch Black Theme" />
-  <img src="assets/preview_white.png" width="48%" alt="Pure White Theme" />
+  <img src="assets/preview-dark-general.png" width="48%" alt="Pitch Black Theme" />
+  <img src="assets/preview-white-general.png" width="48%" alt="Pure White Theme" />
 </div>
 
 ### Interactive Display & Monitor Arrangement
 <div align="center">
-  <img src="assets/preview_monitors.png" width="80%" alt="Monitors Manager" />
+  <img src="assets/preview-dark-monitors.png" width="80%" alt="Monitors Manager" />
 </div>
 
 ### Keybindings & Autostart Management
 <div align="center">
-  <img src="assets/preview_keybinds.png" width="48%" alt="Keybindings Inspector" />
-  <img src="assets/preview_startup.png" width="48%" alt="Autostart Applications" />
+  <img src="assets/preview-dark-keybinds.png" width="48%" alt="Keybindings Inspector" />
+  <img src="assets/preview-dark-startups.png" width="48%" alt="Autostart Applications" />
 </div>
 
 ---
